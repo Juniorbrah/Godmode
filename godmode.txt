@@ -1,16 +1,16 @@
-local Player = game:GetService("Players").LocalPlayer
+local Player = game.Players.LocalPlayer
 local Character = Player.Character or Player.CharacterAdded:Wait()
 local Humanoid = Character:WaitForChild("Humanoid")
 
-Humanoid.Name = "GodHumanoid"
 Humanoid.MaxHealth = math.huge
 Humanoid.Health = math.huge
-Humanoid.WalkSpeed = math.huge
-Humanoid.JumpPower = math.huge
-Humanoid:BuildRigFromAttachments()
+Humanoid.WalkSpeed = 50
+Humanoid.JumpPower = 100
 
 local function GodMode()
-    while wait() do
-        Humanoid.Health = math.huge
+    while true do
+        game:GetService("RunService").RenderStepped:Wait()
     end
 end
+
+GodMode()
